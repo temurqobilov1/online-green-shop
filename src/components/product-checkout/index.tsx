@@ -1,4 +1,3 @@
-import React from 'react'
 import ProductCheckoutInfo from './product-checkout-info'
 import Products from './products'
 

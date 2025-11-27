@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCheckoutComponenet from "../../components/product-checkout";
 
 const ProductCheckout = () => {
