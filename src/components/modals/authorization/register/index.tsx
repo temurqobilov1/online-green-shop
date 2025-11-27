@@ -3,7 +3,10 @@ import GoogleIcon from "../../../../assets/icon/google";
 import FacebookIcon from "../../../../assets/icon/facebook";
 import type { RegisterType } from "../../../../@types";
 import { notificationApi } from "../../../../generic/notification";
-import { useRegisterMutate } from "../../../../hooks/useQuery/useQueryActions";
+import {
+  useRegisterMutate,
+  useRegisterWithGoogle,
+} from "../../../../hooks/useQuery/useQueryActions";
 
 const Register = () => {
   const input_style: string = "h-[40px] mt-2 !border-[#46A358]";
@@ -11,6 +14,8 @@ const Register = () => {
     "border h-[40px] border-[#EAEAEA] rounded-md flex items-center justify-center gap-3 mb-4 cursor-pointer";
   const notify = notificationApi();
   const { mutate } = useRegisterMutate();
+  const { mutate: mutateGoogle } = useRegisterWithGoogle();
+
   const onRegister = (e: RegisterType) => {
     if (e.password !== e.second_password) {
       notify("confirm_password");
@@ -79,7 +84,12 @@ const Register = () => {
           <p className="w-[40%]text-[#3D3D3D] text-[13px]">Or register with</p>
           <div className="w-[30%] h-[2px] bg-[#EAEAEA]"></div>
         </div>
-        <div className={`${icon_style}`}>
+        <div
+          onClick={async () => {
+            mutateGoogle();
+          }}
+          className={`${icon_style}`}
+        >
           <GoogleIcon />
           <p>Register with Google</p>
         </div>

@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB59jpJMGaEoAVzKTvu2F01pgTIMN_JM9M",
-  authDomain: "green-shop-n17.firebaseapp.com",
-  projectId: "green-shop-n17",
-  storageBucket: "green-shop-n17.firebasestorage.app",
-  messagingSenderId: "460303694284",
-  appId: "1:460303694284:web:14f9aed9a146bb6c55c569",
-  measurementId: "G-28FSB66250",
+  apiKey: "AIzaSyBd143hRq9vh-fdDRu6Buucshz5aFQYVC4",
+  authDomain: "grenshop-d6ae2.firebaseapp.com",
+  projectId: "grenshop-d6ae2",
+  storageBucket: "grenshop-d6ae2.firebasestorage.app",
+  messagingSenderId: "420096731018",
+  appId: "1:420096731018:web:9a6c8168cbddc6119e4a73",
+  measurementId: "G-ZXDGCFJMGL",
 };
 
 const app = initializeApp(firebaseConfig);

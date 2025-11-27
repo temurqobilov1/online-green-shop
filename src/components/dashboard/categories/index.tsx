@@ -49,5 +49,4 @@ const Categories = () => {
 };
 
 export default Categories;
-// postman
-// swagger
+

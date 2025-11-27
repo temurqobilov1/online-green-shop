@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <section className="w-full py-16 m-5">
+      <section className="w-[90%] py-16 mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
           <div>
             <img

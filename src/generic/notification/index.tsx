@@ -1,6 +1,6 @@
 import { notification } from "antd";
 
-type NotifyType = "confirm_password" | "add_to_cart";
+type NotifyType = "confirm_password" | "add_to_cart" | "login"; 
 
 export const notificationApi = () => {
   const notify = (type: NotifyType) => {
@@ -9,6 +9,8 @@ export const notificationApi = () => {
         return notification.error({ message: "Passwrods don't match !" });
       case "add_to_cart":
         return notification.success({ message: "Product added to cart!" });
+      case "login":
+        return notification.success({ message: "Logged in successfully" });
     }
   };
 

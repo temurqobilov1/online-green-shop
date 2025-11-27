@@ -8,17 +8,22 @@ import type { ProductType } from "../../../../@types";
 import { useReduxDispatch } from "../../../../hooks/userRedux";
 import { getData } from "../../../../redux/product-slice";
 import { notificationApi } from "../../../../generic/notification";
+import { useNavigate } from "react-router-dom";
 
 const Card: FC<ProductType> = (props) => {
   const icon_style =
     "bg-[#FFFFFF] w-[35px] h-[35px] flex rounded-lg justify-center items-center  cursor-pointer text-[20px]";
   const dispatch = useReduxDispatch();
   const notify = notificationApi();
+  const navigate = useNavigate();
+  const navigetToFlowerInfo = (category: string, _id: string) => {
+    navigate(`/shop/${category}/${_id}`);
+  };
   return (
     <>
       <div className="relative">
-        <div className="group h-[300px] bg-[#f5f5f5] flex justify-center items-center relative overflow-hidden">
-          <img src={props.main_image} alt="flower" className="w-full h-full object-contain" />
+        <div className="group h-[300px] bg-[#f5f5f5] flex justify-center items-center relative">
+          <img src={props.main_image} alt="flower" className="w-3/5" />
           <div className="hidden gap-3 justify-center inset-x-auto absolute bottom-[20px] items-center group-hover:flex max-md:flex">
             <div
               onClick={() => {
@@ -32,7 +37,9 @@ const Card: FC<ProductType> = (props) => {
             <div className={`${icon_style}`}>
               <HeartOutlined />
             </div>
-            <div className={`${icon_style}`}>
+            <div className={`${icon_style}`}
+            onClick={()=> navigetToFlowerInfo(props.category, props._id)}
+            >
               <SearchOutlined />
             </div>
           </div>

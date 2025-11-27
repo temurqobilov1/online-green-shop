@@ -4,6 +4,7 @@ import FacebookIcon from "../../../../assets/icon/facebook";
 import type { LoginType } from "../../../../@types";
 import {
   useLoginMutate,
+  useSignWithGoogle,
 } from "../../../../hooks/useQuery/useQueryActions";
 import { LoadingOutlined } from "@ant-design/icons";
 
@@ -13,6 +14,7 @@ const Login = () => {
     "border h-[40px] border-[#EAEAEA] rounded-md flex items-center justify-center gap-3 mb-4 cursor-pointer";
 
   const { mutate, isPending } = useLoginMutate();
+  const { mutate: mutateGoogle } = useSignWithGoogle();
   const onAuth = (e: LoginType) => {
     mutate(e);
   };
@@ -63,6 +65,9 @@ const Login = () => {
           <div className="w-[30%] h-[2px] bg-[#EAEAEA]"></div>
         </div>
         <div
+          onClick={async () => {
+            mutateGoogle();
+          }}
           className={`${icon_style}`}
         >
           <GoogleIcon />

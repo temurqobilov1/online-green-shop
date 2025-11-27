@@ -1,4 +1,4 @@
-import { Skeleton } from "antd";
+import { Card, Skeleton } from "antd";
 
 const useLoader = () => {
   const category_loader = () => {
@@ -16,7 +16,16 @@ const useLoader = () => {
       </div>
     ));
   };
-  return { category_loader, product_loader };
+
+  const blog_card_loader = () => {
+    return Array.from({ length: 5 }).map((_, idx) => (
+      <Card key={idx} className="mt-[10px]">
+        <Skeleton active={true} />
+      </Card>
+    ));
+  };
+
+  return { category_loader, product_loader, blog_card_loader };
 };
 
 export default useLoader;
